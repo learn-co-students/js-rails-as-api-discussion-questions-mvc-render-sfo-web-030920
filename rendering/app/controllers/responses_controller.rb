@@ -1,10 +1,10 @@
 class ResponsesController < ApplicationController
-  require 'csv'
+  require "csv"
 
   # for each of the controller actions,
   # render the data according to the name of the action
   def plain
-    data = "Early bird gets the worm. But cookie taste better than worm. So me sleep in. - Cookie Monster"
+    data = "Early birrd gets the worm. But cookie taste better than worm. So me sleep in. - Cookie Monster"
   end
 
   def html
@@ -19,7 +19,7 @@ class ResponsesController < ApplicationController
   def json
     data = {
       author: "Cookie Monster",
-      quote:"Early bird gets the worm. But cookie taste better than worm. So me sleep in.",
+      quote: "Early bird gets the worm. But cookie taste better than worm. So me sleep in.",
     }
   end
 
@@ -31,7 +31,7 @@ class ResponsesController < ApplicationController
   end
 
   def csv
-    data =  CSV.generate do |csv|
+    data = CSV.generate do |csv|
       csv << ["author", "name"]
       csv << ["Cookie Monster", "Early bird gets the worm. But cookie taste better than worm. So me sleep in."]
     end
